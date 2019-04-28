@@ -13,4 +13,5 @@ export const ADD_BRAND = "ADD_BRAND";
 export const ADD_WOOD = "ADD_WOOD";
 export const GET_PRODUCT_BYID = "GET_PRODUCT_BYID";
 export const ADD_TO_CART = "ADD_TO_CART";
+
 export const GET_USER_CART = "GET_USER_CART";
