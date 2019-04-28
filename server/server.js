@@ -5,6 +5,7 @@ const formidable = require("express-formidable");
 const cloudinary = require("cloudinary");
 const mongoose = require("mongoose");
 const router = require("./router");
+const compression = require("compression");
 require("dotenv").config();
 
 const app = express();
@@ -15,6 +16,7 @@ mongoose.connect(process.env.DATABASE);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
+app.use(compression());
 
 app.use(express.static("client/build"));
 
