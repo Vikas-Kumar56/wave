@@ -101,4 +101,11 @@ module.exports = function(app, formidable, cloudinary) {
   app.get("/api/product/articles", productController.getAllArticles);
 
   app.post("/api/product/shop", productController.getShop);
+
+  if (process.env.NODE_ENV === "production") {
+    const path = require("path");
+    app.get("/*", (req, res) => {
+      res.sendfile(path.resolve(__dirname, "../client", "build", "index.html"));
+    });
+  }
 };
