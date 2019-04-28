@@ -44,13 +44,17 @@ class Card extends React.Component {
           />
           <div className="action_container">
             <div className="tags">
-              <div className="brand">{props.brand.name}</div>
-              <div className="name">{props.name}</div>
+              <div className="brand" title={props.brand.name}>
+                {props.brand.name.substring(0, 10)}
+              </div>
+              <div className="name" title={props.name}>
+                {props.name.substring(0, 10)}
+              </div>
               <div className="name">{props.price}</div>
             </div>
             {props.grid ? (
-              <div className="description">
-                <p>{props.description}</p>
+              <div className="description" title={props.description}>
+                <p>{props.description.substring(0, 20)}</p>
               </div>
             ) : null}
             <div className="actions">
